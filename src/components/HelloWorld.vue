@@ -1,23 +1,15 @@
 <template>
-	<ul>
-		<li v-if="drPasus=='about'">{{aboutTitle}}></li>
-<!-- 		<li v-on:click="velikaSlova" v-on:mouseenter="uvecaj">Pera</li>
-		<li :style="getStyle()" v-on:click="getAnotherStyle"> Dodjeljivanje style-a </li> -->
-		<li v-if="drPasus=='card1'">
-			<MyCard name=janko lastName=Jankovic></MyCard>
-		</li>
-		<li v-if="drPasus=='card2'">
-			<MyCard name=Petar lastName=Petrovic></MyCard>
-		</li>
-	</ul>
+	<div class="hello">
+		<h1>HOME</h1>
+	</div>
 </template>
 
 <script>
-	import MyCard from './MyCard'
+	import NavCard from './NavCard'
 	export default {
 		name: 'HelloWorld',
 		components: {
-			MyCard
+			NavCard
 		},
 		data () {
 			return {
@@ -45,7 +37,6 @@
 		},
 		mounted: () => {
 			setTimeout(() => {
-				console.log('tu si')
 				this.a.data().drPasus='card1'
 			});
 		}
@@ -70,11 +61,5 @@ li {
 	margin-top:20px;
 	display: inline-block;
 	margin: 10 10px;
-}
-li:hover {
-	background-color:#262626;
-}
-a {
-	color: #42b983;
 }
 </style>
