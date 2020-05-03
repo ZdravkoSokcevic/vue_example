@@ -2,7 +2,7 @@
 	<div id="app">
 		<!-- <img src="./assets/logo.png"> -->
 		<div class="nav">
-			<ul class="flex-column center">
+			<ul class="center">
 				<a href="/#/">
 					<li>
 						<NavCard name=Home icon=pera> </NavCard>
@@ -61,19 +61,22 @@ html {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	display: flex;
+	flex-direction: column;
 }
 .nav {
-	/*margin-top: 50px;*/
-	float: left;
-	width: 200px;
+	align-content: center;
+	width: 100%;
 	z-index: 1000;
-	height: 100%;
+	height: 50px;
 }
 ul {
-	width: 90%;
-	flex-direction: column;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
 	list-style-type: none;
 	padding: 0;
+	justify-content: center;
 }
 .nav > ul {
 	margin-top: 50px;
