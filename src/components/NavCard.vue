@@ -20,7 +20,7 @@
 			  <path fill-rule="evenodd" d="M4 8a.5.5 0 01.5-.5H11a.5.5 0 010 1H4.5A.5.5 0 014 8z" clip-rule="evenodd"/>
 			</svg>
 		</div>
-		<p class="text-notify" v-on:click=""> {{name}} </p>
+		<p class="text-notify" :style="`color:${lightColor}`" v-on:click=""> {{name}} </p>
 		
 	</div>
 </template>
@@ -30,8 +30,14 @@
 		name: 'NavCard',
 		props: {
 			name: String,
-			icon: String,
-			lightColor: '#f00',
+			icon: {
+				type: String,
+				default: ' '
+			},
+			lightColor: {
+				type: String,
+				default: '#fff'
+			},
 		},
 		data() {
 			return {
@@ -53,12 +59,16 @@
 				e.target.style.color= '#'+colorString
 				// console.log(colorString)
 			}
+		},
+		mounted () {
+
 		}
 	}
 </script>
 
 <style strict>
 	.NavCard {
+		height: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

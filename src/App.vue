@@ -5,7 +5,7 @@
 			<ul class="center">
 				<a href="/#/">
 					<li>
-						<NavCard name=Home icon=pera> </NavCard>
+						<NavCard name=Home> </NavCard>
 					</li>
 				</a>
 				<a href="/#/about">
@@ -71,6 +71,7 @@ html {
 	height: 50px;
 }
 ul {
+	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -81,7 +82,11 @@ ul {
 .nav > ul {
 	margin-top: 50px;
 }
+.nav > ul > a {
+	/*height: : 100%;*/
+}
 .nav > ul > a > li {
+	height: 100%;
 	padding: 5px;
 	padding: 15px;
 }

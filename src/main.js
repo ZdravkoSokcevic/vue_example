@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
@@ -10,6 +11,16 @@ import { BootstrapVue, BootstrapVueIcons, IconsPlugin } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+
+// External scripts
+
+Vue.use({
+	install (Vue) {
+		Vue.prototype.$api = axios.create({
+			baseUrl: 'http://vue.ba/api/public/'
+		})
+	}
+})
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
