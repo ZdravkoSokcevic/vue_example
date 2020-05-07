@@ -56,3 +56,6 @@ $router->get('/test', function () {
 	];
 	return response()->json($data);
 });
+
+$router->post('editor/data', 'Controller@saveEditorData');
+$router->get('editor/data', 'Controller@retrieveAllEditorData');

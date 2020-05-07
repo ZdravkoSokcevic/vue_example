@@ -7,6 +7,7 @@
 			<vue-editor v-model="initialEditorData" @click="collectCharacters">
 				
 			</vue-editor>
+			<b-button class="save-button" @click=saveEditorContent>Save</b-button>
 		</div>
 	</div>
 </template>
@@ -42,9 +43,22 @@ export default {
 		collectCharacters () {
 			console.log(this.initialEditorData)
 		},
-	    handleSavingContent: function() {
+	    saveEditorContent: function() {
 	      // You have the content to save
-	      console.log(this.content);
+	      let apiPath= 'http://vue.ba/api/public/'
+	      // let postData= {
+	      // 	data: this.initialEditorData
+	      // }
+	      let formData= new FormData();
+	      formData.set('data', this.initialEditorData)
+	      // console.log(formData)
+	      this.$api.post(apiPath + 'editor/data', formData)
+	      	.then( res => {
+	      		console.log(res)
+	      	})
+	      	.catch( err => {
+	      		console.error('Something wen\'t wrong')
+	      	});
 	    }
 	},
 	beforeDestroy () {
@@ -60,6 +74,7 @@ export default {
 		this.countVisites()
 	},
 	beforeDestroy () {
+		//this.saveEditorContent()
 		console.log(this.initialEditorData)
 	}
 }
@@ -72,15 +87,23 @@ export default {
 		height: 100%;
 	}
 	.editor-container {
+		position: relative;
 		margin-left: 10%;
 		width: 80%;
 		height: 100%;
 	}
 	.quillWrapper {
 		height: 100%;
-		background-color: #2e3436;		
+		background-color: #2e3436;
+		color:#fff;	
+		position: relative;
 	}
 	.ql-toolbar {
 		background-color: #5a5a59;
+	}
+	.save-button {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
 	}
 </style>

@@ -13,12 +13,12 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 
 // External scripts
-
 Vue.use({
 	install (Vue) {
 		Vue.prototype.$api = axios.create({
 			baseUrl: 'http://vue.ba/api/public/'
 		})
+		Vue.prototype.$api.defaults.headers.post['Content-Type']= 'multipart/form-data'
 	}
 })
 

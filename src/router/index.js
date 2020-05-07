@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import MyComponent from '@/components/MyComponent'
 import About from '@/components/About'
+import Post from '@/components/Post'
 
 Vue.use(Router)
 
@@ -20,6 +21,10 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    }, {
+      path: '/posts',
+      name: 'Post',
+      component: Post
     }
   ]
 })

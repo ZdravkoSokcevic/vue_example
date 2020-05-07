@@ -18,6 +18,11 @@
 						<NavCard name=Test icon=default></NavCard>		
 					</li>
 				</a>
+				<a href="/#/posts">
+					<li>
+						<NavCard name=Test icon=default></NavCard>		
+					</li>
+				</a>
 			</ul>
 		</div>
 		<div class="main">

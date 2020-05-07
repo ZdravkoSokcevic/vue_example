@@ -67,7 +67,7 @@
 			this.tick=setInterval( () => {
 				this.setText()
 			}, 60)
-			this.$api.get()
+			this.$api.get(apiRoute)
 				.then( res=> {
 					let data= {}
 					res.data.map(el => {
